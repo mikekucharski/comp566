@@ -1,0 +1,203 @@
+#new_footer {
+	height:50px;
+	background-color:black;
+}
+
+#brand {
+	color: #9DD494;
+	font-size: 28px;
+	margin-right: 10px;
+}
+
+/* DEBUG INFO */
+@mixin box_sizing {
+	-moz-box-sizing:    border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing:         border-box;
+}
+
+.debug_dump {
+	clear: both;
+	float: left;
+	width: 100%;
+	margin-top: 45px;
+	@include box_sizing;
+}
+
+// FOOTER STUFF
+footer {
+	margin-top: 45px;
+	padding-top: 5px;
+	border-top: 1px solid #eaeaea;
+	color: darkgrey;
+
+	a {
+		color: #555;
+	}
+
+	a:hover {
+		color: #222;
+	}
+
+	small {
+		float: left;
+	}
+
+	ul {
+		float: right;
+		list-style: none;
+
+		li {
+			float: left;
+			margin-left: 15px;
+		}
+	}
+}
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+
+/* forms */
+label {
+	font-size: 18px;
+}
+
+
+input {
+  height: auto !important;
+
+
+}
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 10px;
+  @include box_sizing;
+}
+
+#login_icon {
+	//margin-top: 50px;
+	vertical-align: middle
+}
+
+.center {
+    display:block;
+    margin: auto;
+    margin-top:60px;
+}
+
+.nav-container {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.navbar {
+	background-color: #004D01; 
+	margin-bottom: 20px;
+	color: #9DD494;
+
+	li:hover {
+		background-color: #267113;
+	}
+
+	li > a {
+		color: #9DD494 !important;
+	}
+
+	li.active > a {
+		color: white !important;
+		background-color: #267113 !important; 
+	}
+
+	li > a:hover {
+		color: #FFFFFF !important;
+	}
+}
+
+.upcoming {
+	padding-left: 0px;
+	list-style-type: none;
+
+	li {
+		margin-top: 10px;
+	}
+}
+
+.event {
+    display: inline-block;
+    width: 60%;
+}
+
+.event-date {
+	display: inline-block;
+	width: 80px;
+	margin-right: 10px;
+	height: 100%;
+	font-weight: bold;
+	vertical-align: top;
+}
+
+#ups_banner {
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.brand-logo {
+	height: 200px; 
+	width: 200px; 
+	display: block;
+}
+
+.item-counter {
+	display: inline-block;
+	width: 50px;
+}
+
+.price {
+	font-weight:bold;
+}
+
+#header-logo {
+	height: 36px;
+	width: 36px;
+	border-radius: 100%;
+	display: inline-block;
+}
+
+.navbar-brand {
+	padding: 10px !important;
+}
+
+#header_mid_logo {
+	border: 3px solid #004D01;
+	border-radius: 100%;
+	height: 60px;
+	width: 60px;
+	position: absolute;
+	margin-top: 50px;
+	left: 50%;
+	margin-left: -30px;
+}
+
+.nav-list {
+	list-style: none;
+	padding-left: 20px;
+	//list-style-image: url(image_path('tick.png'));
+	li {
+		margin-bottom: 2px;
+		font-size: 14px;
+
+		:hover {
+			text-decoration: none;
+		}
+
+		i {
+			padding-right: 5px;
+		}
+	}
+}

@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h1>Sign Up</h1>
+    <%= form_tag "/static_pages/home", method: "GET"  do %>
+      <%= label_tag :firstname, 'First Name'%>
+      <%= text_field_tag :firstname, '', class: "form-control", required: true, placeholder: "Joe" %>
+      <%= label_tag :firstname, 'Last Name'%>
+      <%= text_field_tag :lasstname, '', class: "form-control", required: true, placeholder: "Smith" %>
+      <%= label_tag :email, 'Email'%>
+      <%= text_field_tag :email, '', class: "form-control", required: true, placeholder: "test@example.com" %>
+      <%= label_tag :password, 'Password' %>
+      <%= password_field_tag :password, '', class: "form-control", required: true %>
+      <%= label_tag :password_confirmation, 'Password Again' %>
+      <%= password_field_tag :password_confirmation, '', class: "form-control", required: true %>
+      <%= submit_tag "Register", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

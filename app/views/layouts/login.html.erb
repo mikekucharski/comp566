@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%= render "html_head", title: full_title(yield(:title)) %>
+</head>
+<body>
+
+  <%= render "out_navbar" %>
+  <% if params[:action] == "welcome" %>
+    <div class="jumbotron">
+  		<div class="container">
+  		  <h1>Shred, Skate, Shop!</h1>
+  		  <p>Eastern Shredder is an online skateboard shop for all your skating needs. We sell boards, wheels, bearings, and clothing. Hurry up while supplies last!</p>
+  		  <p><a class="btn btn-primary btn-lg" href="/static_pages/register/" role="button">Register »</a></p>
+  		  <p>Already have an account? <a href="/static_pages/signin/" role="button">Login</a></p>
+  		</div>
+    </div>
+  <% end %>
+  <div class="container">
+  	<%= yield %>
+    <%= render "footer" %>
+    <%= debug(params) if Rails.env.development? %>
+  </div>
+
+</body>
+</html>

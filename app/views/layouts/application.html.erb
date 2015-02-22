@@ -1,14 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Comp566</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+    <%= render "html_head", title: full_title(yield(:title)) %>
 </head>
 <body>
 
-<%= yield %>
+  <%= render "in_navbar" %>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <h3>Upcoming events</h3>
+        <ul class="upcoming">
+          <li>
+            <span class="event-date">March 5</span>
+            <div class="event">Go Skating Day</div>
+          </li>
+          <li>
+            <span class="event-date">April 7</span>
+            <div class="event">Blow Out Sale</div>
+          </li>
+          <li>
+            <span class="event-date">August 1</span>
+            <div class="event">Back To School Sale</div>
+          </li>
+        </ul>
+
+        <h3>Skateboards</h3>
+        <ul class="nav-list">
+          <li><i class="glyphicon glyphicon-menu-right"></i><a href="/static_pages/products">Decks</a></li>
+          <li><i class="glyphicon glyphicon-menu-right"></i><a href="/static_pages/products">Trucks</a></li>
+          <li><i class="glyphicon glyphicon-menu-right"></i><a href="/static_pages/products">Wheels</a></li>
+          <li><i class="glyphicon glyphicon-menu-right"></i><a href="/static_pages/products">Bearings</a></li>
+          <li><i class="glyphicon glyphicon-menu-right"></i><a href="/static_pages/products">Griptape</a></li>
+        </ul>
+
+        <h3>Clothing</h3>
+        <ul class="nav-list">
+          <li><i class="glyphicon glyphicon-menu-right"></i><a href="/static_pages/products">Shirts</a></li>
+          <li><i class="glyphicon glyphicon-menu-right"></i><a href="/static_pages/products">Pants</a></li>
+          <li><i class="glyphicon glyphicon-menu-right"></i><a href="/static_pages/products">Hats</a></li>
+          <li><i class="glyphicon glyphicon-menu-right"></i><a href="/static_pages/products">Shoes</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-9">
+        <%= yield %>
+      </div>
+    </div>
+  	
+    <%= render "footer" %>
+    <%= debug(params) if Rails.env.development? %>
+  </div>
 
 </body>
 </html>
