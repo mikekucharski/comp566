@@ -1,0 +1,19 @@
+<%= content_for(:title, "Home") %>
+<h1>Shop By Brand</h1>
+<%= image_tag "ups.jpg", id: "ups_banner" %>
+<div class="row">
+  <% @brands.each do |brand| %>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <%= image_tag "brand_#{brand.name.downcase}.jpg", class: "brand-logo" %>
+        <div class="caption">
+          <h3><%= brand.name %></h3>
+          <p><%= brand.name %> Skateboards</p>
+          <p>
+            <%= link_to "Shop #{brand.name}", brand_path(brand.name), class: "btn btn-primary right" %>
+          </p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

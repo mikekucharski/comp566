@@ -1,16 +1,29 @@
 Rails.application.routes.draw do
-  get 'static_pages/welcome'
-  get 'static_pages/signin'
-  get 'static_pages/register'
-  get 'static_pages/home'
-  get 'static_pages/products'
-  get 'static_pages/about'
-  get 'static_pages/contact'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+
+  get 'welcome' => 'static_pages#welcome'
+  get 'about'   => 'static_pages#about'
+  get 'contact' => 'static_pages#contact'
+  
+  get 'login'     => 'sessions#new'
+  post 'login'    => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
+  get 'signup'    => 'users#new'
+  get 'home'      => 'users#home'
+  get 'replenish' => 'users#addBalance'
+  get 'restock'   => 'products#restock'
+  get 'checkout'  => 'orders#checkout'
+  get 'products/category/:category', to: 'products#category', as: :category
+  get 'products/brand/:brand', to: 'products#brand', as: :brand
+
+  resources :orders, only: [:index, :show, :create]
+  resources :users, only: [:new, :create, :edit, :update, :destroy]
+
+
   root 'static_pages#welcome'
 
   # Example of regular route:

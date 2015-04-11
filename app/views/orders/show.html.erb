@@ -1,0 +1,27 @@
+<%= content_for(:title, "Order " + params[:id]) %>
+<h1>Order <%= params[:id] %></h1>
+<div class="row">
+	<% if @products.any? %>
+		<table class="table table-striped">
+			<tbody>
+				<tr>
+					<th>Product Name</th>
+					<th>Price</th>
+					<th>Quantity</th>	
+					<th>Line Price</th>				
+				</tr>
+				<% @products.each do |op| %>
+					<tr>
+						<td><%= op.product.title %></td>
+						<td><%= "$#{op.product.price}" %></td>
+						<td><%= op.quantity %></td>
+						<td><%= "$#{op.product.price * op.quantity}" %></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+		<h3><%= "Order Total: $#{@total}" %></h3>
+	<% else %>
+		<i>This order did not have any products. Go <%= link_to "home", home_path %></i>
+	<% end %>
+</div>

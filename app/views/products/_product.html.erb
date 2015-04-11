@@ -1,0 +1,18 @@
+<div class="col-sm-6 col-md-4 product">
+    <div class="thumbnail">
+      <%= image_tag getImageName(product), class: "product-image" %>
+      <div class="caption">
+        <h3><%= product.title %></h3>
+        <span>Price: $</span><span class="price"><%= product.price %></span>
+        <br>
+        <span>Remaning: </span><span class="stock"><%= product.stock %></span>
+        <div>
+          Quantity:
+          <input class="item-counter" type="number" min="0" max="10" value="0">
+        </div>
+      </div>
+    </div>
+    <span class="id" style="display:none">
+    	<%= product.id %>
+    </span>
+  </div>

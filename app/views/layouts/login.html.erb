@@ -5,14 +5,27 @@
 </head>
 <body>
 
-  <%= render "out_navbar" %>
+  <%= render "navbar" %>
+
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <% if flash.any? %>
+        <% flash.each do |message_type, message| %>
+          <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
   <% if params[:action] == "welcome" %>
     <div class="jumbotron">
   		<div class="container">
   		  <h1>Shred, Skate, Shop!</h1>
   		  <p>Eastern Shredder is an online skateboard shop for all your skating needs. We sell boards, wheels, bearings, and clothing. Hurry up while supplies last!</p>
-  		  <p><a class="btn btn-primary btn-lg" href="/static_pages/register/" role="button">Register »</a></p>
-  		  <p>Already have an account? <a href="/static_pages/signin/" role="button">Login</a></p>
+  		  <p>
+          <%= link_to "Register", signup_path, class: "btn btn-primary btn-lg" %>
+        </p>
+  		  <p>Already have an account? <%= link_to "Login", login_path, role: "button" %></p>
   		</div>
     </div>
   <% end %>

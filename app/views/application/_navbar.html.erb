@@ -1,0 +1,32 @@
+<nav class="navbar navbar-default navbar-static-top navbar-inverse">
+  <%= image_tag "one_love.png", id: "header_mid_logo" %>
+  <div class="container nav-container">
+    <span class="navbar-brand" id="brand">
+        <%= image_tag "one_love.png", id: "header-logo" %> Eastern Shredder
+    </span>
+    <% if logged_in? %>
+      <span class="navbar-nav" id="balance-holder"> Your Balance: $<span id="balance"><%= number_with_precision(current_user.balance, precision: 2) %></span>
+    <% end %>
+    </span>
+    <ul class="nav navbar-nav navbar-right">
+      <% if logged_in? %>
+        <li class="<%= 'active' if params[:controller] == 'users' && params[:action] == 'home'  %>">
+          <%= link_to "Home", home_path %>
+        </li>
+        <li class="<%= 'active' if params[:controller] == 'orders' && params[:action] == 'index'  %>">
+          <%= link_to "My Orders", orders_path %>
+        </li>
+        <li class="<%= 'active' if params[:controller] == 'users' && params[:action] == 'edit'  %>">
+          <%= link_to "Account", edit_user_path(current_user) %>
+        </li>
+        <li>
+          <%= link_to "Log out", logout_path, method: "delete"%>
+        </li>
+      <% else %>
+        <li><%= link_to "login", login_path %></li>
+        <li><%= link_to "register", signup_path %></li>
+      <% end %>
+    </ul>
+       
+  </div>
+</nav>

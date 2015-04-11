@@ -1,21 +1,11 @@
 class StaticPagesController < ApplicationController
-	layout 'login', :only => [:welcome, :signin, :register, :contact, :about]
+	layout 'login', :only => [:welcome, :contact, :about]
+	skip_before_action :logged_in_user
 
 	def welcome
 	end
-	
-	def signin
-		@user = User.new
-	end
 
-	def register
-		@user = User.new
-	end
-
-	def home
-	end
-
-	def products
+	def contact
 	end
 
 	def about

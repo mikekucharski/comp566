@@ -1,3 +1,5 @@
+html {overflow-y: scroll;}
+
 #new_footer {
 	height:50px;
 	background-color:black;
@@ -7,6 +9,10 @@
 	color: #9DD494;
 	font-size: 28px;
 	margin-right: 10px;
+}
+
+.right {
+	float: right;
 }
 
 /* DEBUG INFO */
@@ -98,7 +104,7 @@ input, textarea, select, .uneditable-input {
 
 .navbar {
 	background-color: #004D01; 
-	margin-bottom: 20px;
+	margin-bottom: 35px;
 	color: #9DD494;
 
 	li:hover {
@@ -197,7 +203,34 @@ input, textarea, select, .uneditable-input {
 		}
 
 		i {
-			padding-right: 5px;
+			padding-right: 2px;
 		}
 	}
 }
+
+#balance-holder {
+	background-color: #93E393;
+	border-radius: 20px;
+	padding: 10px;
+	color: #004D01;
+	font-size: 16px;
+	margin-top: 5px;
+}
+
+#balance {
+	font-weight: bold;
+}
+
+
+// Products CSS
+.product-image {
+	max-height: 1100px;
+	max-width: 800px;
+	max-height: 350px;
+	max-width: 250px;
+}
+
+.thumbnail > li { width:100px; }
+.thumbnail .caption{ overflow :hidden; text-overflow:ellipsis; }
+//.thumbnail img{ height:111px; width:74px}
+

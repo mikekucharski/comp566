@@ -1,0 +1,53 @@
+<%= content_for(:title, "Checkout") %>
+<h1>Checkout</h1>
+<div class="row">
+	<div class="col-md-6">
+		<h3>Billing Information</h3>
+
+		<%= form_tag  %>
+		<%= label_tag :bname, 'Name' %>
+		<%= text_field_tag :bname, nil, class: "form-control", required: true %>
+		<%= label_tag :bemail, 'Email' %>
+		<%= text_field_tag :bemail, nil, class: "form-control", required: true %>
+		<%= label_tag :baddress, 'Address' %>
+		<%= text_field_tag :baddress, nil, class: "form-control", required: true %>
+		<%= label_tag :bcity, 'City' %>
+		<%= text_field_tag :bcity, nil, class: "form-control", required: true %>
+		<%= label_tag :bstate, 'State' %>
+		<%= text_field_tag :bstate, nil, class: "form-control", required: true %>		
+		<%= label_tag :bzipcode, 'Zipcode' %>
+		<%= text_field_tag :bzipcode, nil, class: "form-control", required: true %>
+		<%= label_tag :btelephone, 'Telephone' %>
+		<%= text_field_tag :btelephone, nil, class: "form-control", required: true %>
+
+		<%= label_tag :sameshipbill do %>
+		  Use billing as shipping
+		  <%= check_box_tag :sameshipbill %>
+		<% end %>
+
+	</div>
+	<div class="col-md-6">
+		<h3>Shipping Information</h3>		
+
+		<%= form_tag  %>
+		<%= label_tag :sname, 'Name' %>
+		<%= text_field_tag :sname, nil, class: "form-control", required: true %>
+		<%= label_tag :semail, 'Email' %>
+		<%= text_field_tag :semail, nil, class: "form-control", required: true %>
+		<%= label_tag :saddress, 'Address' %>
+		<%= text_field_tag :saddress, nil, class: "form-control", required: true %>
+		<%= label_tag :scity, 'City' %>
+		<%= text_field_tag :scity, nil, class: "form-control", required: true %>
+		<%= label_tag :sstate, 'State' %>
+		<%= text_field_tag :sstate, nil, class: "form-control", required: true %>		
+		<%= label_tag :szipcode, 'Zipcode' %>
+		<%= text_field_tag :szipcode, nil, class: "form-control", required: true %>
+		<%= label_tag :stelephone, 'Telephone' %>
+		<%= text_field_tag :stelephone, nil, class: "form-control", required: true %>
+	</div>
+</div>
+
+<button id="place_order" class="btn btn-primary">Place Order</button>
+
+
+

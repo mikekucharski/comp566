@@ -1,0 +1,36 @@
+<%= provide :title, "Account Settings" %>
+<div class="row">
+  <h1>Edit Account Settings</h1>
+  <div class="col-md-6">
+    
+    <%= form_for(@user) do |f| %>
+      <%= render "shared/error_messages" %>
+
+      <%= f.label :first_name, 'First Name' %>
+      <%= f.text_field :first_name, class: "form-control", required: true, placeholder: "Joe" %>
+
+      <%= f.label :last_name, 'Last Name'%>
+      <%= f.text_field :last_name, class: "form-control", required: true, placeholder: "Smith" %>
+
+      <%= f.label :email, 'Email' %>
+      <%= f.email_field :email, class: "form-control", required: true, placeholder: "test@example.com" %>
+
+      <%= f.label :password, 'Password' %>
+      <%= f.password_field :password, class: "form-control", required: true %>
+
+      <%= f.label :password_confirmation, 'Password Again' %>
+      <%= f.password_field :password_confirmation, class: "form-control", required: true %>
+
+      <%= f.submit "Update Settings", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
+  <div class="col-md-6">
+    <h4>Running low on money?</h4>
+    <button id="addBalance" type="button" class="btn btn-danger">Add $200</button>
+  </div>
+  <div class="col-md-6">
+    <h4>We have restocking 24/7</h4>
+    <button id="restock" type="button" class="btn btn-danger">Restock Store</button>
+  </div>
+</div>
